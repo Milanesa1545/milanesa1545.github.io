@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Pagina web de SpaceMc</title>
 </head>
 <body>
     <header>
@@ -25,9 +25,9 @@
         <section>
             <h2>Nuestros Servicios</h2>
             <ul>
-                <li>Servicio 1</li>
-                <li>Servicio 2</li>
-                <li>Servicio 3</li>
+                <li>Enlaces de interes</li>
+                <li>discord https://discord.gg/EDnfSHZEep</li>
+                <li>X https://twitter.com/SpaceMc_Java</li>
             </ul>
         </section>
     </main>
