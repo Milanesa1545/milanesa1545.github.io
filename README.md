@@ -13,7 +13,7 @@
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Enlaces</a></li>
             <li><a href="#">Contacto</a></li>
         </ul>
     </nav>
@@ -23,7 +23,7 @@
             <p>Somos una Comunidad de Discord.</p>
         </section>
         <section>
-            <h2>Nuestros Servicios</h2>
+            <h2>Nuestros Enlaces de interes</h2>
             <ul>
                 <li>Enlaces de interes</li>
                 <li>discord https://discord.gg/EDnfSHZEep</li>
@@ -32,4 +32,4 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Mi Página Web
+        <p>&copy; Contacta con el Owner Milanesa1521SpaceMc@gmail.com
