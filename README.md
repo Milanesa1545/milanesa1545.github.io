@@ -39,3 +39,39 @@
     </footer>
 </body>
 </html>
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Estilos específicos */
+ul, ol {
+    margin: 0;
+    padding: 0 0 0 30px;
+}
+
+/* Agrega estilos adicionales según tus preferencias de diseño. */
