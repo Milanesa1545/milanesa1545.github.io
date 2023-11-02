@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>Bienvenido a Mi Página Web</h1>
+        <h1>Bienvenido a la pagina web de SpaceMc</h1>
     </header>
     <nav>
         <ul>
