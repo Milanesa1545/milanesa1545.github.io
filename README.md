@@ -1,35 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina web de SpaceMc</title>
-</head>
-<body>
-    <header>
-        <h1>Bienvenido a la pagina web de SpaceMc</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Enlaces</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Acerca de Nosotros</h2>
-            <p>Somos una Comunidad de Discord.</p>
-        </section>
-        <section>
-            <h2>Nuestros Enlaces de interes</h2>
-            <ul>
-                <li>Enlaces de interes</li>
-                <li>discord https://discord.gg/EDnfSHZEep</li>
-                <li>X https://twitter.com/SpaceMc_Java</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; Contacta con el Owner Milanesa1521SpaceMc@gmail.com
+    }
+
+    repositories {
+        maven {
+            name = "comugamersRepository"
+            credentials(PasswordCredentials::class)
+
+            url = if (project.version.toString().contains("-SNAPSHOT")) {
+                uri("https://repo.comugamers.com/repository/maven-snapshots/")
+            } else {
+                uri("https://repo.comugamers.com/repository/maven-releases/")
+            }
+        }
+    }
+}
+
+tasks {
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(8))
+        }
+    }
+
+    withType<JavaCompile>().configureEach {
+        options.encoding = "UTF-8"
+    }
+
+    compileJava {
+        options.compilerArgs.add("-parameters")
+    }
+
+    getByName<Test>("test") {
+        useJUnitPlatform()
+    }
+
+    named("build") {
+        dependsOn(named("shadowJar"))
+    }
+
+    withType<ShadowJar> {
+        val pkg = "com.comugamers.sentey.internal"
+        val version = project.version.toString()
+
+        relocate("dev.triumphteam.cmd", "$pkg.triumphteam.cmd")
+        relocate("org.apache.http", "$pkg.apache.http")
+        relocate("org.apache.commons.logging", "$pkg.apache.commons.logging")
+        relocate("org.apache.commons.codec", "$pkg.apache.commons.codec")
+        relocate("javax.inject", "$pkg.javax.inject")
+        relocate("team.unnamed.inject", "$pkg.trew")
+        relocate("org.bstats", "$pkg.bstats")
+
+        archiveFileName.set("sentey-$version.jar")
+    }
+}
+
+bukkit {
+    main = "com.comugamers.sentey.Sentey"
+    apiVersion = "1.13"
+    version = "${project.version}"
+    authors = listOf("Pabszito", "Jojo1545")
+    description = "${findProperty("plugin-description")}"
+    name = "${findProperty("plugin-name")}"
+    website = "www.comugamers.com"
+    softDepend = listOf("CG-Core")
+}
