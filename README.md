@@ -20,7 +20,7 @@
     <main>
         <section>
             <h2>Acerca de Nosotros</h2>
-            <p>Somos una página web de ejemplo. Aquí puedes encontrar información sobre nosotros y lo que hacemos.</p>
+            <p>Somos una Comunidad de Discord.</p>
         </section>
         <section>
             <h2>Nuestros Servicios</h2>
